@@ -72,8 +72,9 @@ const pickWordAndCategory = () => {
   
 
   //função para processar palavras no input
-  const verifyLetter = () => {
-    setGameStage(stages[2].name)
+  const verifyLetter = (letter) => {
+    console.log(letter)
+    
   }
 
   //recomeçar jogo
