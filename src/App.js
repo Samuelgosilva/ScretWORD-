@@ -73,8 +73,28 @@ const pickWordAndCategory = () => {
 
   //função para processar palavras no input
   const verifyLetter = (letter) => {
-    console.log(letter)
-    
+    const normalizedLetter = letter.toLowerCase()
+
+    //checagem se a letra já foi utilizada
+    if(guessedLetters.includes(normalizedLetter) ||
+     wrongLetters.includes(normalizedLetter)){
+      return;
+    }
+
+    //push guessed letter or remove a guess
+    if(letters.includes(normalizedLetter)){
+      setGuessedLetters((actualGuessedLetters) => [
+        ...actualGuessedLetters, 
+        normalizedLetter
+      ])
+    } else {
+      setWrongLetters((actualWrongLetters) => [
+        ...actualWrongLetters, 
+        normalizedLetter
+      ])
+
+    }
+
   }
 
   //recomeçar jogo
